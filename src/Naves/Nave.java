@@ -13,4 +13,7 @@ public abstract class Nave {
 
     public abstract void fuel(String fuel);
 
+    public String getName() {
+        return name;
+    }
 }

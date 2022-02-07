@@ -2,15 +2,20 @@ package Naves;
 
 public class CrearTripulada extends Nave implements Tripulada{
 
-    private String transport;
+    static String transport ;
     private String fuel;
-    private int cantPas;
+    private String cantPas;
     private String dest;
 
     public CrearTripulada(String name) {
         super(name);
+        this.transport = "Trasbordador";
     }
 
+
+    public String getTransport() {
+        return transport;
+    }
 
     @Override
     public void fuel(String fuel) {
@@ -18,7 +23,7 @@ public class CrearTripulada extends Nave implements Tripulada{
     }
 
     @Override
-    public void cantidadPasajeros(int cantPas) {
+    public void cantidadPasajeros(String cantPas) {
         this.cantPas = cantPas;
     }
 
@@ -27,5 +32,15 @@ public class CrearTripulada extends Nave implements Tripulada{
         this.dest = dest;
     }
 
+    public String getFuel() {
+        return fuel;
+    }
 
+    public String getCantPas() {
+        return cantPas;
+    }
+
+    public String getDest() {
+        return dest;
+    }
 }

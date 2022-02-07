@@ -2,6 +2,6 @@ package Naves;
 
 public interface NoTripulada {
 
-    public void typeNave();
-    public void study();
+    public void typeNave(String type);
+    public void study(String planet);
 }
