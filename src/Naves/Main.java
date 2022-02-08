@@ -1,27 +1,25 @@
 package Naves;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Clase principal
+ */
 public class Main {
     public static void main(String[] args) {
         boolean bool= true;
         int cont = 0;
         Scanner sc = new Scanner(System.in);
+        /**
+         * Creacion de ArrayList de Objetos
+         */
         ArrayList<CrearTripulada> nave = new ArrayList<>();
         ArrayList<CrearNoTripulada> nave2 = new ArrayList<>();
-
-        /*
-        nave.add(new CrearTripulada("sonia"));
-        nave.add(new CrearTripulada("whale"));
-        nave.add(new CrearTripulada("python"));
-
-        for(int i = 0; i < nave.size(); i++) {
-            System.out.println(nave.get(i).getName());
-        }
-
-        System.out.println(nave.get(2).getTransport());*/
-
+        /**
+         * Condicion while que me permite la creacion de cantidad ilimitadas de diferentes objetos
+         */
         while (bool == true){
             System.out.println("Elija el tipo de nave a crear: 1.Tripulada 2.No tripulada");
             int num = sc.nextInt();
@@ -39,7 +37,7 @@ public class Main {
                 System.out.println("Digite tipo de mision: 1.Mantenimiento 2.Investigacion ");
                 name = sc.nextLine();
                 nave.get(cont).mission(name);
-            }else if(num == 2){
+            }else{
                 System.out.println("Digite nombre de la nave no tripulada: ");
                 String name = sc.nextLine();
                 nave2.add(new CrearNoTripulada(name));
@@ -66,11 +64,15 @@ public class Main {
 
         }
 
+        /**
+         * impresion de las naves creadas
+         */
         System.out.println("Las naves tripuladas creadas son:");
 
         for(int i = 0; i < nave.size(); i++) {
-            System.out.println("la nave "+i+1+" es: ");
+            System.out.println("la nave "+(i+1)+" es: ");
             System.out.println(nave.get(i).getName());
+            System.out.println("Tipo: "+nave.get(i).getTransport());
             System.out.println(nave.get(i).getFuel());
             System.out.println(nave.get(i).getCantPas());
             System.out.println(nave.get(i).getDest());
@@ -79,7 +81,7 @@ public class Main {
 
         System.out.println("Las naves no tripuladas creadas son:");
         for(int i = 0; i < nave2.size(); i++) {
-            System.out.println("la nave "+i+1+" es: ");
+            System.out.println("la nave "+(i+1)+" es: ");
             System.out.println(nave2.get(i).getName());
             System.out.println(nave2.get(i).getType());
             System.out.println(nave2.get(i).getFuel());
